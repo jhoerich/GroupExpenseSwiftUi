@@ -11,7 +11,10 @@ import SwiftUI
 struct GroupExpenseApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
+                .environment(MainViewModel())
+                .environment(LoginViewModel())
+                .environment(AuthenticationHelper.instance)
         }
     }
 }
