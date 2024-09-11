@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol ITokenRequest : IApiRequest {
+    var token : String { get }
+}

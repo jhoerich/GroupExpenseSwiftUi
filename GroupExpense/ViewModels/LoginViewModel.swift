@@ -10,30 +10,36 @@ import SwiftUI
 
 @Observable
 public class LoginViewModel {
-    var email : String = ""
+    var username : String = ""
     var password : String = ""
+    var isLoading : Bool = false
     
-    var error : [Error] = []
+    var error : [HashableError] = []
     
     init() {
-        self.email = ""
+        self.username = ""
         self.password = ""
+        self.error = []
     }
     
     func login() async {
-        let loginRequest = LoginRequest(username: self.email, password: self.password);
+        let loginRequest = LoginRequest(body: LoginRequestBody(username: self.username, password: self.password))
+        self.error = []
+        self.isLoading.toggle()
+        
+        defer {
+            self.isLoading.toggle()
+        }
         
         do {
-            let authResponse: AuthResponse? = try await RequestHelper.instance.sendRequest(request: loginRequest, httpMethod: "POST")
+            let authResponse: AuthResponse? = try await RequestHelper.instance.sendRequest(request: loginRequest)
             AuthenticationHelper.instance.login(response: authResponse!)
         }catch{
-            guard let responseError = error as? WebApiErrorResponse else {
+            guard let responseError = error as? ApiErrorResponse else {
                 print("\(error)")
                 return
             }
-            self.error = []
-            print(error)
-            self.error.append(responseError)
+            self.error = responseError.errors
         }
     }
 }

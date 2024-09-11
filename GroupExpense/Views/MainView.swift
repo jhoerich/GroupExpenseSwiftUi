@@ -25,7 +25,7 @@ struct MainView: View {
 
 #Preview {
     MainView()
-        .environment(MainViewModel())
         .environment(AuthenticationHelper.instance)
         .environment(LoginViewModel())
+        .environment(RegisterViewModel())
 }

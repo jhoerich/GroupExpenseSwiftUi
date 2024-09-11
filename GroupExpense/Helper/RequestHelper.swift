@@ -20,13 +20,14 @@ class RequestHelper {
         self.decoder = JSONDecoder()
     }
     
-    func sendRequest<T : IResponse>(request : IWebApiRequest, httpMethod: String) async throws -> T? {
+    func sendRequest<T : IApiResponse>(request : any IApiRequest) async throws -> T? {
         var urlRequest = URLRequest(url: self.url)
-        urlRequest.httpMethod = httpMethod
-        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        urlRequest.setValue("\(request.route)", forHTTPHeaderField: "api-key")
         
-        let jsonData = try! self.encoder.encode(request)
+        urlRequest.httpMethod = request.httpMethod
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.setValue(request.apiKey, forHTTPHeaderField: "api-key")
+        
+        let jsonData = try! self.encoder.encode(request.body)
         urlRequest.httpBody = jsonData
         
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
@@ -35,7 +36,7 @@ class RequestHelper {
         }
         
         if(response.statusCode != 200) {
-            let errorResponse = try! self.decoder.decode(WebApiErrorResponse.self, from: data)
+            let errorResponse = try! self.decoder.decode(ApiErrorResponse.self, from: data)
             throw errorResponse
         }
         

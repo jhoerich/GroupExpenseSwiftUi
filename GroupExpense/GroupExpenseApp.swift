@@ -12,9 +12,9 @@ struct GroupExpenseApp: App {
     var body: some Scene {
         WindowGroup {
             MainView()
-                .environment(MainViewModel())
-                .environment(LoginViewModel())
                 .environment(AuthenticationHelper.instance)
+                .environment(LoginViewModel())
+                .environment(RegisterViewModel())
         }
     }
 }

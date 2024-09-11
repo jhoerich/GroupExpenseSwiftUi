@@ -15,7 +15,7 @@ class AuthenticationHelper {
     public static let instance = AuthenticationHelper()
     
     init() {
-        self.isAuthenticated = !KeychainHelper.instance.isAuthenticated()
+        self.isAuthenticated = KeychainHelper.instance.isAuthenticated()
         self.keychainHelper = KeychainHelper.instance
     }
     

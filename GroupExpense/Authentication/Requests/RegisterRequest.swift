@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+struct RegisterRequest : IAuthRequest {
+    let apiKey: String = "/register"
+    let httpMethod: String = "POST"
+    
+    var body: RegisterRequestBody
+    
+    init(body: RegisterRequestBody) {
+        self.body = body
+    }
+}

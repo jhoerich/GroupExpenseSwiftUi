@@ -33,9 +33,11 @@ public class KeychainHelper {
                 kSecValueData as String: longTermTokenData
             ],
         ]
+        
         for query in queries {
             let castedQuery = query as CFDictionary
             SecItemDelete(castedQuery)
+            SecItemAdd(castedQuery, nil)
         }
     }
     
@@ -53,7 +55,7 @@ public class KeychainHelper {
     }
     
     func isAuthenticated() -> Bool {
-        guard let token = loadToken() else {
+        guard loadToken() != nil else {
             return false
         }
         return true
@@ -74,10 +76,7 @@ public class KeychainHelper {
             if let retrievedData = dataTypeRef as? Data {
                 return String(data: retrievedData, encoding: .utf8)
             }
-        } else {
-            print("Fehler beim Laden: OSStatus = \(status)")
         }
-        
         return nil
     }
  
@@ -88,6 +87,5 @@ public class KeychainHelper {
                 kSecClass as String: kSecClassGenericPassword,
                 kSecAttrAccount as String: key
             ]
-        SecItemDelete(query as CFDictionary)
     }
 }

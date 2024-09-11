@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol IResponse : Decodable {
+protocol IApiResponse : Decodable {
     
 }

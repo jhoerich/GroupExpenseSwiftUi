@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+struct LoginRequest : IAuthRequest {
+    let apiKey: String = "/login"
+    let httpMethod: String = "POST"
+    
+    var body: LoginRequestBody
+    
+    init(body: LoginRequestBody) {
+        self.body = body
+    }
+}
+

@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct WebApiErrorResponse : IResponse, Error {
-    let errors : [String : String]
+struct ApiErrorResponse : IApiResponse, Error {
+    let errors : [HashableError]
 }

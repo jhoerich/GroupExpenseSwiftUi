@@ -7,20 +7,20 @@
 
 import Foundation
 
-struct HashableError : Hashable {
+struct HashableError : Hashable, Decodable {
     let key : String
-    let originalMessage : String
+    let message : String
     
     init(key: String, originalMessage: String) {
         self.key = key
-        self.originalMessage = originalMessage
+        self.message = originalMessage
     }
     
     func getMessage() -> String {
-        let message = String(localized: "\(self.key)")
-        guard message.isEmpty else {
-            return self.originalMessage
+        let localizedMessage = String(localized: String.LocalizationValue(self.key))
+        if localizedMessage.isEmpty {
+            return self.message
         }
-        return message
+        return localizedMessage
     }
 }

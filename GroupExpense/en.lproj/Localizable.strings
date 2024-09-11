@@ -6,3 +6,15 @@
 "login"="login";
 "passwordForgot"="Forgot your password?";
 "newAccount"="Don't have account?";
+
+"ERROR_EMAIL_NOT_FOUND"="E-Mail not found!";
+"ERROR_EMAIL_TO_LONG"="E-Mail is too long!";
+"ERROR_EMAIL_WRONG_FORMAT"="E-Mail is in the wrong format!";
+"ERROR_EMAIL_IS_ALREADY_IN_USE"="E-Mail is already in use!";
+
+"ERROR_PASSWORD_WRONG"="wrong password!";
+"ERROR_USER_NOT_FOUND"="user not found!";
+"ERROR_GROUP_NOT_FOUND"="group not found!";
+
+"ERROR_INVALID_OR_EXPIRED_TOKEN"="expired session!";
+"ERROR_INVALID_INVITE_TOKEN"="ivnite is expired!";
