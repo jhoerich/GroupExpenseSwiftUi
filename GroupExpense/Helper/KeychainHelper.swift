@@ -87,5 +87,6 @@ public class KeychainHelper {
                 kSecClass as String: kSecClassGenericPassword,
                 kSecAttrAccount as String: key
             ]
+        SecItemDelete(query as CFDictionary)
     }
 }

@@ -6,6 +6,10 @@
 "login"="login";
 "passwordForgot"="Forgot your password?";
 "newAccount"="Don't have account?";
+"settings"="Settings";
+"groups"="Groups";
+"logout"="Logout";
+"registration"="Registration";
 
 "ERROR_EMAIL_NOT_FOUND"="E-Mail not found!";
 "ERROR_EMAIL_TO_LONG"="E-Mail is too long!";

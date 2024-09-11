@@ -6,6 +6,10 @@
 "login"="Anmelden";
 "passwordForgot"="Passwort vergessen?";
 "newAccount"="Noch kein Konto?";
+"settings"="Einstellungen";
+"groups"="Gruppen";
+"logout"="Abmelden";
+"registration"="Anmeldung";
 
 "ERROR_EMAIL_NOT_FOUND"="Es wurde keine E-Mail Adresse angegeben!";
 "ERROR_EMAIL_TO_LONG"="E-Mail ist zu lang!";

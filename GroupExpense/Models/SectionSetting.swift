@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+struct SectionSetting : Hashable {
+    let title : String
+    var settings : [Setting]
+    
+    init(title: String, settings: [Setting]) {
+        self.title = title
+        self.settings = settings
+    }
+}

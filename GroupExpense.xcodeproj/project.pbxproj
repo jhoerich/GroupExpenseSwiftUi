@@ -36,6 +36,10 @@
 		47788F412C8DFDA80013B1FA /* CustomSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47788F402C8DFDA80013B1FA /* CustomSecureField.swift */; };
 		47788F5E2C8E107C0013B1FA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 47788F5D2C8E107C0013B1FA /* Localizable.strings */; };
 		47788F612C8E10900013B1FA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 47788F5F2C8E10900013B1FA /* Localizable.strings */; };
+		4780CF962C91E59B00851196 /* RoutingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4780CF952C91E59B00851196 /* RoutingView.swift */; };
+		4780CF9A2C91F0F800851196 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4780CF992C91F0F800851196 /* SettingView.swift */; };
+		4780CF9C2C91F92F00851196 /* SectionSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4780CF9B2C91F92F00851196 /* SectionSetting.swift */; };
+		4780CF9E2C91F94500851196 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4780CF9D2C91F94500851196 /* Setting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +74,10 @@
 		47788F402C8DFDA80013B1FA /* CustomSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureField.swift; sourceTree = "<group>"; };
 		47788F5C2C8E107C0013B1FA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		47788F602C8E10900013B1FA /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4780CF952C91E59B00851196 /* RoutingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingView.swift; sourceTree = "<group>"; };
+		4780CF992C91F0F800851196 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		4780CF9B2C91F92F00851196 /* SectionSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionSetting.swift; sourceTree = "<group>"; };
+		4780CF9D2C91F94500851196 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +113,8 @@
 			isa = PBXGroup;
 			children = (
 				47572C762C918CA300C622AB /* HashableError.swift */,
+				4780CF9B2C91F92F00851196 /* SectionSetting.swift */,
+				4780CF9D2C91F94500851196 /* Setting.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -165,10 +175,13 @@
 		475BD8E82C8DDB5900D238EF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4780CF9F2C920FE400851196 /* SettingDestinationViews */,
 				47788F3A2C8DFCEA0013B1FA /* CustomViews */,
 				475BD8EB2C8DDDC400D238EF /* LoginView.swift */,
 				475BD8ED2C8DDDF000D238EF /* RegisterView.swift */,
 				475A4F222C8DF9EC004AA093 /* MainView.swift */,
+				4780CF952C91E59B00851196 /* RoutingView.swift */,
+				4780CF992C91F0F800851196 /* SettingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -238,6 +251,13 @@
 			children = (
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4780CF9F2C920FE400851196 /* SettingDestinationViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SettingDestinationViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,6 +343,7 @@
 				47572C642C9180EA00C622AB /* IApiRequestBody.swift in Sources */,
 				47572C6F2C91827E00C622AB /* RegisterRequestBody.swift in Sources */,
 				475CEA132C8F85080069E9F2 /* ApiErrorResponse.swift in Sources */,
+				4780CF9C2C91F92F00851196 /* SectionSetting.swift in Sources */,
 				475BD8EA2C8DDB7600D238EF /* BackgroundView.swift in Sources */,
 				475BD8EC2C8DDDC400D238EF /* LoginView.swift in Sources */,
 				47572C742C91865800C622AB /* RegisterRequest.swift in Sources */,
@@ -334,7 +355,10 @@
 				475BD8FF2C8DEFC300D238EF /* AuthResponse.swift in Sources */,
 				47788F412C8DFDA80013B1FA /* CustomSecureField.swift in Sources */,
 				47572C622C9180C600C622AB /* IApiRequest.swift in Sources */,
+				4780CF9A2C91F0F800851196 /* SettingView.swift in Sources */,
 				476411CE2C90E7A800D22B14 /* AuthenticationHelper.swift in Sources */,
+				4780CF962C91E59B00851196 /* RoutingView.swift in Sources */,
+				4780CF9E2C91F94500851196 /* Setting.swift in Sources */,
 				47788F3F2C8DFD130013B1FA /* CustomTextField.swift in Sources */,
 				47572C5E2C917EC500C622AB /* LoadingView.swift in Sources */,
 				475BD8D92C8D0DBC00D238EF /* GroupExpenseApp.swift in Sources */,

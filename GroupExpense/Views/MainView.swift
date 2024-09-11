@@ -14,11 +14,7 @@ struct MainView: View {
         if(!authHelper.isAuthenticated) {
             LoginView()
         }else{
-            Button(action: {
-                authHelper.logout()
-            }, label: {
-                Text("Logout!")
-            })
+            RoutingView()
         }
     }
 }
