@@ -8,5 +8,5 @@
 import Foundation
 
 struct WebApiErrorResponse : IResponse, Error {
-    let error : ValidationError
+    let errors : [String : String]
 }
