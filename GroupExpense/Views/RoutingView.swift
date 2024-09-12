@@ -12,21 +12,19 @@ struct RoutingView: View {
     
     var body: some View {
             VStack(spacing:0) {
-                TabView(selection:$selectedTab) {
-                    NavigationStack {
-                        Text("Hello World")
-                            .navigationTitle(String(localized: "groups"))
+                NavigationStack{
+                    TabView(selection:$selectedTab) {
+                        NavigationStack {
+                            Text("Hello World")
+                        }
+                        .tag(0)
+                        
+                        SettingSectionView()
+                            .navigationTitle("Settings")
+                            .tag(1)
                     }
-                    .tag(0)
-                    NavigationStack {
-                        VStack {
-                            SettingView()
-                                .navigationTitle(String(localized: "settings"))
-                        }.padding(.top, 100)
-                    }
-                    .tag(1)
+                    .tabViewStyle(.page(indexDisplayMode: .never))
                 }
-                .tabViewStyle(.page(indexDisplayMode: .never))
                 
                 VStack {
                     Divider()

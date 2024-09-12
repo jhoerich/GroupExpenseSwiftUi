@@ -6,3 +6,9 @@
 //
 
 import Foundation
+import SwiftUI
+
+protocol ISettingBody : Hashable{
+    var view : AnyView? { get }
+    var title : String { get }
+}

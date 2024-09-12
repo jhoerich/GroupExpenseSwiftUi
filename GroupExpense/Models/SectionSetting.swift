@@ -7,12 +7,20 @@
 
 import Foundation
 
-struct SectionSetting : Hashable {
-    let title : String
-    var settings : [Setting]
+struct SectionSetting : Hashable, Identifiable {
+    static func == (lhs: SectionSetting, rhs: SectionSetting) -> Bool {
+        return lhs.title == rhs.title
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(title)
+    }
     
-    init(title: String, settings: [Setting]) {
+    let id : UUID = UUID()
+    let title : String
+    var settings : [Setting] = []
+    
+    init(title: String) {
         self.title = title
-        self.settings = settings
     }
 }

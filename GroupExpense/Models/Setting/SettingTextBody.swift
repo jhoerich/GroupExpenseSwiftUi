@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct SettingTextBody : ISettingBody {
-    static func == (lhs: SettingText, rhs: SettingText) -> Bool {
+    static func == (lhs: SettingTextBody, rhs: SettingTextBody) -> Bool {
         return lhs.title == rhs.title
     }
 
@@ -21,9 +21,38 @@ struct SettingTextBody : ISettingBody {
     var title : String
     
     init(title: String, imageSystemName: String, color: Color) {
+        self.title = title
+        self.view = AnyView(
+            HStack {
+                Image(systemName: imageSystemName)
+                    .foregroundStyle(Color(.systemGray))
+                Text(title)
+                    .foregroundColor(color)
+            }
+        )
+    }
+    
+    init(title: String, imageSystemName: String) {
+        self.title = title
         self.view = AnyView(HStack {
             Image(systemName: imageSystemName)
                 .foregroundStyle(Color(.systemGray))
+            Text(title)
+        })
+    }
+    
+    init(title: String) {
+        self.title = title
+        self.view = AnyView(HStack {
+            Text(title)
+        })
+    }
+    
+    init(title: String, color: Color) {
+        self.title = title
+        self.view = AnyView(HStack {
+            Text(title)
+                .foregroundColor(color)
         })
     }
 }
