@@ -39,7 +39,7 @@ struct SettingSectionView: View {
     }
     
     func createSettings() -> [SectionSetting] {
-        var kontoSection = SectionSetting(title: String(localized: "Konto"))
+        var kontoSection = SectionSetting(title: String(localized: "account"))
         var anmedlungSection = SectionSetting(title: String(localized: "registration"))
         
         anmedlungSection.settings.append(Setting(
@@ -54,13 +54,13 @@ struct SettingSectionView: View {
         
         kontoSection.settings.append(
             Setting(
-                body: SettingTextBody(title: "Benutzerkonto", imageSystemName: "person"),
+                body: SettingTextBody(title: String(localized: "account"), imageSystemName: "person"),
                 destinationType: .sheet,
                 view: { VStack { Text("Benutzerkontod") }}))
         
         kontoSection.settings.append(
             Setting(
-                body: SettingTextBody(title: "Sprache", imageSystemName: "map"),
+                body: SettingTextBody(title: String(localized: "language"), imageSystemName: "map"),
                 destinationType: .settings,
                 action: {
                     if let url = URL(string: UIApplication.openSettingsURLString) {

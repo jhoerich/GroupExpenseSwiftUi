@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct AuthResponse : IApiResponse {
+struct RefreshResponse : IApiResponse {
     let token : String
     let longTermToken : String
 }
