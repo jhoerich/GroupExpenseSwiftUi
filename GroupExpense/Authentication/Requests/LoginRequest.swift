@@ -8,7 +8,7 @@
 import Foundation
 
 struct LoginRequest : IAuthRequest {
-    let apiKey: String = "/login"
+    let apiKey: String = "/auth/login"
     let httpMethod: String = "POST"
     
     var body: LoginRequestBody

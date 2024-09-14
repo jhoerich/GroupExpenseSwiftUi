@@ -8,7 +8,7 @@
 import Foundation
 
 @Observable
-class GroupsViewModel {
+class GroupUebersichtViewModel {
     var zeilen : [GroupUebersichtZeile] = []
     var isLoading : Bool = false
     
@@ -22,7 +22,6 @@ class GroupsViewModel {
     
     
     func load() async {
-        print("Start")
         guard let token = KeychainHelper.instance.loadToken() else {
             return
         }
@@ -41,6 +40,5 @@ class GroupsViewModel {
             print("Error: \(error)")
             return
         }
-        print("Ende")
     }
 }

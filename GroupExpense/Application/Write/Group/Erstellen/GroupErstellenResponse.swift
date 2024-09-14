@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+struct GroupErstellenResponse : IApiResponse {
+    let groupId : UUID
+    
+    init(groupId: UUID) {
+        self.groupId = groupId
+    }
+}

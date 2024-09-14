@@ -12,19 +12,16 @@ struct RoutingView: View {
     
     var body: some View {
             VStack(spacing:0) {
-                NavigationStack{
-                    TabView(selection:$selectedTab) {
-                        NavigationStack {
-                            Text("Hello World")
-                        }
+                TabView(selection:$selectedTab) {
+                    GroupUebersichtView()
+                        .navigationTitle(String(localized: "groups"))
                         .tag(0)
-                        
-                        SettingSectionView()
-                            .navigationTitle("Settings")
-                            .tag(1)
-                    }
-                    .tabViewStyle(.page(indexDisplayMode: .never))
+                    
+                    SettingSectionView()
+                        .navigationTitle(String(localized: "settings"))
+                        .tag(1)
                 }
+                .tabViewStyle(.page(indexDisplayMode: .never))
                 
                 VStack {
                     Divider()
@@ -37,7 +34,9 @@ struct RoutingView: View {
                                 .frame(width: 35, height: 25)
                                 .padding(.top)
                         }.onTapGesture {
-                            self.selectedTab = 0
+                            withAnimation(.snappy, {
+                                self.selectedTab = 0
+                            })
                         }.frame(maxWidth: .infinity)
                         VStack {
                             Image(systemName: "gear")
@@ -46,7 +45,9 @@ struct RoutingView: View {
                                 .frame(width: 30, height: 30)
                                 .padding(.top)
                         }.onTapGesture {
-                            self.selectedTab = 1
+                            withAnimation(.snappy, {
+                                self.selectedTab = 1
+                            })
                         }.frame(maxWidth: .infinity)
                     }.frame(maxHeight: 35)
                 }
@@ -56,4 +57,6 @@ struct RoutingView: View {
 
 #Preview {
     RoutingView()
+        .environment(GroupUebersichtViewModel())
+        .environment(GroupErstellenViewModel())
 }

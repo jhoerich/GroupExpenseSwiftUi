@@ -10,6 +10,13 @@
 "groups"="Gruppen";
 "logout"="Abmelden";
 "registration"="Anmeldung";
+"loading"="Laden...";
+"language"="Sprache";
+"account"="Benutzerkonto";
+"name"="Bezeichnung";
+"create"="Erstellen";
+"cancel"="Abbrechen";
+"newGroup"="Neue Gruppe";
 
 "ERROR_EMAIL_NOT_FOUND"="Es wurde keine E-Mail Adresse angegeben!";
 "ERROR_EMAIL_TO_LONG"="E-Mail ist zu lang!";

@@ -44,8 +44,7 @@ struct SettingSectionView: View {
         
         anmedlungSection.settings.append(Setting(
             body: SettingTextBody(
-                title: String(localized: "logout"),
-                imageSystemName: "", color: .red),
+                title: String(localized: "logout"), color: .red),
             action: {
                 withAnimation(.snappy, {
                     AuthenticationHelper.instance.logout()

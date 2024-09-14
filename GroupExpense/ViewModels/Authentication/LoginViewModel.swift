@@ -32,7 +32,7 @@ public class LoginViewModel {
         }
         
         do {
-            let authResponse: AuthResponse? = try await RequestHelper.instance.sendRequest(request: loginRequest)
+            let authResponse: LoginResponse? = try await RequestHelper.instance.sendRequest(request: loginRequest)
             AuthenticationHelper.instance.login(response: authResponse!)
         }catch{
             guard let responseError = error as? ApiErrorResponse else {

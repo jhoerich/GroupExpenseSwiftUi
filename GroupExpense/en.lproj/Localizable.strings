@@ -10,6 +10,14 @@
 "groups"="Groups";
 "logout"="Logout";
 "registration"="Registration";
+"loading"="Loading...";
+"language="="Language";
+"account"="Account";
+"name"="name";
+"create"="create";
+"cancel"="cancel";
+"newGroup"="New Group";
+
 
 "ERROR_EMAIL_NOT_FOUND"="E-Mail not found!";
 "ERROR_EMAIL_TO_LONG"="E-Mail is too long!";

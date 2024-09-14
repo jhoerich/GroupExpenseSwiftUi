@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+protocol IAuthResponse : IApiResponse {
+    var token : String { get }
+    var longTermToken : String { get }
+}

@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct RegisterResponse : IAuthResponse {
+    let token : String
+    let longTermToken : String
+}

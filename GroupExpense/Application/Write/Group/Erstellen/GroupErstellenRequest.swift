@@ -11,15 +11,15 @@ struct GroupErstellenRequest : ITokenRequest {
     let httpMethod: String = "POST";
     let apiKey: String = "/group/create"
     
-    var body: GroupUebersichtRequestBody
+    var body: GroupErstellenBodyRequest
     var token : String
     
-    init(token : String) {
+    init(token : String, body : GroupErstellenBodyRequest) {
         self.token = token
-        self.body = GroupUebersichtRequestBody()
+        self.body = body
     }
 }
 
 struct GroupErstellenBodyRequest : IApiRequestBody {
-    let bezeichnung : String
+    let name : String
 }

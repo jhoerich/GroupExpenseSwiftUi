@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+struct RefreshRequestBody : IApiRequestBody {
+    let token : String
+    let longTermToken : String
+    
+    init(token: String, longTermToken: String) {
+        self.token = token
+        self.longTermToken = longTermToken
+    }
+}

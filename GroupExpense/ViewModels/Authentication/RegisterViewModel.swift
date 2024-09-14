@@ -37,7 +37,7 @@ class RegisterViewModel {
         
         
         do {
-            let authResponse: AuthResponse? = try await RequestHelper.instance.sendRequest(request: request)
+            let authResponse: RegisterResponse? = try await RequestHelper.instance.sendRequest(request: request)
             AuthenticationHelper.instance.login(response: authResponse!)
         }catch{
             guard let responseError = error as? ApiErrorResponse else {

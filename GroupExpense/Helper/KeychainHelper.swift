@@ -14,7 +14,7 @@ public class KeychainHelper {
 
     public static let instance = KeychainHelper();
     
-    func saveToken(response: AuthResponse) {
+    func saveToken(response: any IAuthResponse) {
         guard let tokenData = response.token.data(using: .utf8),
               let longTermTokenData = response.longTermToken.data(using: .utf8) else {
             print("Fehler bei der Konvertierung von Token in Data")

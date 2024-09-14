@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 class RequestHelper {
-    private let url : URL = URL(string: "http://192.168.178.140:3000/api")!
+    private let url : String = "http://192.168.178.140:3000/api"
     private let encoder : JSONEncoder
     private let decoder : JSONDecoder
     
@@ -21,11 +21,13 @@ class RequestHelper {
     }
     
     func sendRequest<T : IApiResponse>(request : any IApiRequest) async throws -> T? {
-        var urlRequest = URLRequest(url: self.url)
-        
+        var urlRequest = URLRequest(url: URL(string: "\(url)\(request.apiKey)")!)
         urlRequest.httpMethod = request.httpMethod
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         urlRequest.setValue(request.apiKey, forHTTPHeaderField: "api-key")
+        if let tokenRequest = request as? (any ITokenRequest) {
+            urlRequest.setValue(tokenRequest.token, forHTTPHeaderField: "token")
+        }
         
         let jsonData = try! self.encoder.encode(request.body)
         urlRequest.httpBody = jsonData
@@ -37,6 +39,7 @@ class RequestHelper {
         
         if(response.statusCode != 200) {
             let errorResponse = try! self.decoder.decode(ApiErrorResponse.self, from: data)
+            print(errorResponse)
             throw errorResponse
         }
         
